@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "license": "0BSD",
   "scripts": {
-    "build": "yarn workspace example build",
+    "build": "yarn workspace staging build",
     "develop": "yarn workspace example develop",
     "start-staging": "yarn workspace staging develop"
   },

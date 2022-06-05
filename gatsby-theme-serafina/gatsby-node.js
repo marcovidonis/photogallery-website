@@ -37,7 +37,6 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
           node {
             name
             slug
-            s3
           }
         }
       }
@@ -56,7 +55,6 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
       component: GalleryTemplate,
       context: {
         name: node.name,
-        s3: node.s3,
         options: {
           spacing,
           layout

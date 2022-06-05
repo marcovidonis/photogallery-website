@@ -24,9 +24,18 @@ export default ({name, options, photos}) => {
             let cameraEXIF = photo.EXIF.Model + ' ' + photo.EXIF.LensModel;
             // Remove any duplicated words (e.g. from iPhone EXIF)
             cameraEXIF = Array.from(new Set(cameraEXIF.split(' '))).join( " ");
-            return (<><div style={{display: "flex", alignItems: "center", gap: 6}}><FaCameraRetro />{cameraEXIF}</div><div style={{display: "flex", alignItems: "center", gap: 6}}><FaRulerHorizontal/> {Math.round(photo.EXIF.FocalLength * 10)/10}mm <FiAperture/> ƒ/{photo.EXIF.FNumber} <FaStopwatch/> 1/{Math.round(1/photo.EXIF.ExposureTime)} ISO {photo.EXIF.ISO} </div></>)
+            return (
+                <>
+                    <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                        <FaCameraRetro />
+                        {cameraEXIF}
+                    </div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                        <FaRulerHorizontal /> {Math.round(photo.EXIF.FocalLength * 10) / 10}mm <FiAperture /> ƒ/{photo.EXIF.FNumber} <FaStopwatch /> 1/{Math.round(1 / photo.EXIF.ExposureTime)} ISO {photo.EXIF.ISO}
+                    </div>
+                </>
+            )
         }
-
         return photo.title;
     }
 
